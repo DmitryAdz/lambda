@@ -17,10 +17,6 @@ public class Album {
 		this.musicians = musicians;
 	}
 
-	/*public List<Artist> getMusicians() {
-		return musicians;
-	}*/
-	
 	public Stream<Artist> getMusicians() {
 		return this.musicians.stream();
 	}
