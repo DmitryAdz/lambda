@@ -11,6 +11,7 @@ import org.junit.Assert;
 public class LambdaMap {
 
 	public static void main(String[] args) {
+		
 		List<String> collected = new ArrayList<>();
 		for(String str : Arrays.asList("a", "b", "hello")) {
 			String upperCaseStr = str.toUpperCase();

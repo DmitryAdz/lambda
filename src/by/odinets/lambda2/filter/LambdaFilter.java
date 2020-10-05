@@ -20,6 +20,7 @@ public class LambdaFilter {
 		}
 		System.out.println("beginWithNumbers :: " + beginWithNumbers);
 		
+		//lambda
 		List<String> beginWithNumbers1 = Stream.of("a", "1abc", "abc1")
 											   .filter(value -> Character.isDigit(value.charAt(0)))
 											   .collect(Collectors.toList());
