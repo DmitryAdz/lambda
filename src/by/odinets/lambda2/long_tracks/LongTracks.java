@@ -2,6 +2,7 @@ package by.odinets.lambda2.long_tracks;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -66,6 +67,10 @@ public class LongTracks {
 		System.out.println("test nation :: " + test);
 		test.clear();
 				
+		test = findNationalityArtists1(album1);
+		System.out.println("test nation1 :: " + test);
+		
+		printTrackLengthStatistics(album1);
 	}
 	
 	public static Set<String> findLongTracks(List<Album> albums) {
@@ -127,7 +132,7 @@ public class LongTracks {
 			  		 .collect(Collectors.toSet());
 	}
 	
-	//lambda
+	//lambda not good
 	public static Set<String> findNationalityArtists(Album album) {
 		Set<String> origins = new HashSet<>();
 		List<Artist> musicians = album.getMusicians()
@@ -140,5 +145,25 @@ public class LongTracks {
 					   .collect(Collectors.toSet());
 									  
 		return origins;
+	}
+	//lambda is good
+	public static Set<String> findNationalityArtists1(Album album) {
+		Set<String> origins = album.getMusicians()
+								   .filter(artist -> artist.getName().startsWith("The"))
+								   .map(artist -> artist.getNationality())
+								   .collect(Collectors.toSet());
+		return origins;
+	}
+	
+	//lambda ooooo
+	public static void printTrackLengthStatistics(Album album) {
+		IntSummaryStatistics trackLengthStats = album.getTracks()
+													 .mapToInt(track -> track.getLength())
+													 .summaryStatistics();
+		System.out.printf("MAX: %d, MIN: %d, AVE: %f, SUM: %d",
+							trackLengthStats.getMax(),
+							trackLengthStats.getMin(),
+							trackLengthStats.getAverage(),
+							trackLengthStats.getSum());
 	}
 }
