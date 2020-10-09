@@ -6,8 +6,8 @@ import java.util.Set;
 
 import by.odinets.lambda.project.book.chapter1.Album;
 import by.odinets.lambda.project.book.chapter1.SampleData;
-import by.odinets.lambda.project.book.chapter3.Decisions;
 import by.odinets.lambda.project.book.chapter3.Iteration;
+import by.odinets.lambda.project.book.chapter3.desicion_origins.Decisions;
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step0LongTrackFinder;
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step1LongTrackFinder;
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step2LongTrackFinder;
@@ -90,6 +90,8 @@ public class RunApplication {
 		trackNames = step4.findLongTracks(albumList);
 		System.out.println("chapter3 :: step4.findLongTracks() :: trackNames :: " + trackNames);
 		trackNames.clear();
+		
+		
 	}
 
 }

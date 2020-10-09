@@ -1,4 +1,4 @@
-package by.odinets.lambda.project.book.chapter3;
+package by.odinets.lambda.project.book.chapter3.desicion_origins;
 
 import java.util.*;
 import java.util.stream.Collectors;
