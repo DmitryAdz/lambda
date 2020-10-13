@@ -13,6 +13,9 @@ import by.odinets.lambda.project.book.chapter3.long_track_finder.Step1LongTrackF
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step2LongTrackFinder;
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step3LongTrackFinder;
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step4LongTrackFinder;
+import by.odinets.lambda.project.book.chapter4.logger.Logger;
+import by.odinets.lambda.project.book.chapter4.parent_child.ChildImpl;
+import by.odinets.lambda.project.book.chapter4.parent_child.ParentImpl;
 
 public class RunApplication {
 
@@ -42,7 +45,7 @@ public class RunApplication {
 		countArtistsAll = iteration.internalCountArtistsFromLondonPrinted(SampleData.getAllArtists());
 		System.out.println("chapter3 :: internalCountArtistsFromLondonPrinted () :: " + countArtistsAll);
 		
-		//---------------------------------------------------------------------------------------------
+		System.out.println("//---------------------------------------------------------------------------------------------");
 		
 		Decisions decision = new Decisions();
 		Decisions.Imperative decisionImperative = new Decisions.Imperative();
@@ -61,7 +64,7 @@ public class RunApplication {
 		System.out.println("chapter3 :: decision.originsOfBands() :: test :: " + test);
 		test.clear();
 		
-		//---------------------------------------------------------------------------------------------
+		System.out.println("//---------------------------------------------------------------------------------------------");
 		
 		Step0LongTrackFinder step0 = new Step0LongTrackFinder();
 		Step1LongTrackFinder step1 = new Step1LongTrackFinder();
@@ -91,9 +94,25 @@ public class RunApplication {
 		System.out.println("chapter3 :: step4.findLongTracks() :: trackNames :: " + trackNames);
 		trackNames.clear();
 		
-		//---------------------------------------------------------------------------------------------
+		System.out.println("//---------------------------------------------------------------------------------------------");
 		
+		//chapter4
+		Logger logger = new Logger();
+		if(logger.isDebugEnabled()) {
+			logger.debug("Look at this: " + logger.expensiveOperation());
+		}
 		
+		Logger logger1 = new Logger();
+		logger1.debug(() -> "Look at this: " + logger1.expensiveOperation());
+		
+		System.out.println("//---------------------------------------------------------------------------------------------");
+		
+		//chapter 4
+		ParentImpl parentImpl = new ParentImpl();
+		parentImpl.parentDefaultUsed();
+		
+		ChildImpl childImpl = new ChildImpl();
+		childImpl.childOverrideDefault();
 	}
 
 }
