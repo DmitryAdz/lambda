@@ -8,7 +8,7 @@ public class ChildImpl extends ParentImpl implements Child{
 
 	@Test
 	public void childOverrideDefault() {
-		System.out.println("Child :: childOverrideDefault() :: ");
+		System.out.println("ChildImpl :: childOverrideDefault()");
 		Child child = new ChildImpl();
 		child.welcome();
 		assertEquals("Child :: welcome :: Hi!", child.getLastMessage());		

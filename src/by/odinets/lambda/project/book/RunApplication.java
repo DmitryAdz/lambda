@@ -15,7 +15,10 @@ import by.odinets.lambda.project.book.chapter3.long_track_finder.Step3LongTrackF
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step4LongTrackFinder;
 import by.odinets.lambda.project.book.chapter4.logger.Logger;
 import by.odinets.lambda.project.book.chapter4.parent_child.ChildImpl;
+import by.odinets.lambda.project.book.chapter4.parent_child.OverridingChild;
+import by.odinets.lambda.project.book.chapter4.parent_child.OverridingParent;
 import by.odinets.lambda.project.book.chapter4.parent_child.ParentImpl;
+
 
 public class RunApplication {
 
@@ -113,6 +116,13 @@ public class RunApplication {
 		
 		ChildImpl childImpl = new ChildImpl();
 		childImpl.childOverrideDefault();
+		
+		OverridingParent parentOverrid = new OverridingParent();
+		parentOverrid.concreteBeatsDefault();
+		
+		OverridingChild childOverrid = new OverridingChild();
+		childOverrid.concreteBeatsCloserDefault();
+		
 	}
 
 }

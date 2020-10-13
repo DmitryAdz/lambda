@@ -10,7 +10,7 @@ public class ParentImpl implements Parent {
 	
 	@Override
 	public void message(String body) {
-		System.out.println("ParentImpl :: message() :: ");
+		System.out.println("ParentImpl :: message(body) :: " + body);
 		this.body = body;
 	}
 	
@@ -21,7 +21,7 @@ public class ParentImpl implements Parent {
 	
 	@Test
 	public void parentDefaultUsed() {
-		System.out.println("ParentImpl :: parentDefaultUsed() :: ");
+		System.out.println("ParentImpl :: parentDefaultUsed()");
 		Parent parent = new ParentImpl();
 		parent.welcome();
 		assertEquals("Parent :: welcome :: Hi!", parent.getLastMessage());
