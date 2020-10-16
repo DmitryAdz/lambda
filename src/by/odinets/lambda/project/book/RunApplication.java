@@ -14,10 +14,13 @@ import by.odinets.lambda.project.book.chapter3.long_track_finder.Step2LongTrackF
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step3LongTrackFinder;
 import by.odinets.lambda.project.book.chapter3.long_track_finder.Step4LongTrackFinder;
 import by.odinets.lambda.project.book.chapter4.logger.Logger;
+import by.odinets.lambda.project.book.chapter4.optional.OptionalBegin;
 import by.odinets.lambda.project.book.chapter4.parent_child.ChildImpl;
 import by.odinets.lambda.project.book.chapter4.parent_child.OverridingChild;
 import by.odinets.lambda.project.book.chapter4.parent_child.OverridingParent;
 import by.odinets.lambda.project.book.chapter4.parent_child.ParentImpl;
+import by.odinets.lambda.project.book.chapter5.collectors.CollectorsExample;
+import by.odinets.lambda.project.book.chapter5.method_reference.MethodReference;
 
 
 public class RunApplication {
@@ -122,6 +125,30 @@ public class RunApplication {
 		
 		OverridingChild childOverrid = new OverridingChild();
 		childOverrid.concreteBeatsCloserDefault();
+		
+		System.out.println("//---------------------------------------------------------------------------------------------");
+		
+		//chapter 4
+		OptionalBegin optionalBegin = new OptionalBegin();
+		
+		System.out.println("//---------------------------------------------------------------------------------------------");
+		
+		//chapter 5
+		MethodReference methodReference = new MethodReference();
+		methodReference.compareList();
+		//methodReference.compareSet();
+		methodReference.compareSet2();
+		methodReference.compareList2();
+		methodReference.compareSet3();
+		
+		System.out.println("//---------------------------------------------------------------------------------------------");
+		
+		//chapter 5
+		CollectorsExample collectorExample = new CollectorsExample();
+		collectorExample.toCollectionTreeSet();
+		
+		System.out.println("biggestGroup() :: " + collectorExample.biggestGroup(SampleData.threeArtists()));
+		
 		
 	}
 

@@ -1,7 +1,9 @@
 package by.odinets.lambda.project.book.chapter1;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Artist {
 	
@@ -17,7 +19,7 @@ public class Artist {
 	
 	public Artist(String name, List<Artist> members, String nationality) {
 		this.name = name;
-		this.members = members;
+		this.members = new ArrayList<>(members);
 		this.nationality = nationality;
 	}
 	
@@ -25,8 +27,12 @@ public class Artist {
 		return name;
 	}
 	
-	public List<Artist> getMembers() {
+	public List<Artist> getMembersList() {
 		return members;
+	}
+	
+	public Stream<Artist> getMembers() {
+		return members.stream();
 	}
 	
 	public String getNationality() {
